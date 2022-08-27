@@ -15,8 +15,8 @@ void say_goodbye(char* target){
     printf("Bye %s!\n", target);
 }
 void reverse_greet(char* target){
-    int i, j;
-    char temp;
+    int i, j, k;
+    char temp[100];
     for(i = 0; target[i] != '\0'; i++);
     //printf("Lenght: %d\n", i);
     j = i - 1;
@@ -26,4 +26,15 @@ void reverse_greet(char* target){
         printf("%c", target[j]);
     }
     printf("!\n");
+
+    // another implementation
+    temp[i] = '\0';
+    k = 0;
+    for (j = i - 1; j >= 0 ; j--) {
+        temp[k++] = target[j];
+    }
+    temp[j] = '\0';
+
+    printf("String after reversing it: %s", temp);
+
 }
