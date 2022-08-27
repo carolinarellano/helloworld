@@ -15,26 +15,20 @@ void say_goodbye(char* target){
     printf("Bye %s!\n", target);
 }
 void reverse_greet(char* target){
-    int i, j, k;
-    char temp[100];
+    int i, j;
+
     for(i = 0; target[i] != '\0'; i++);
-    //printf("Lenght: %d\n", i);
-    j = i - 1;
-    printf("Hello ");
-    for(j; j>=0; j--)
+
+    char temporal;
+    i = i - 1;
+    j = 0;
+    while (i > j)
     {
-        printf("%c", target[j]);
+        temporal = target[j];
+        target[j] = target[i];
+        target[i] = temporal;
+        j++;
+        i--;
     }
-    printf("!\n");
-
-    // another implementation
-    temp[i] = '\0';
-    k = 0;
-    for (j = i - 1; j >= 0 ; j--) {
-        temp[k++] = target[j];
-    }
-    temp[j] = '\0';
-
-    printf("String after reversing it: %s", temp);
-
+    printf("Hello %s", target);
 }
